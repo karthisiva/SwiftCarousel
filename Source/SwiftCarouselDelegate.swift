@@ -67,4 +67,8 @@
      - parameter offset: New offset of the Carousel.
      */
     @objc optional func didEndDragging(withOffset offset: CGPoint)
+    
+    @objc optional func didSelectItem(item: UIView, index: Int, tapped: Bool, currentObj:UIView) -> UIView?
+    
+    @objc optional func didDeselectItem(item: UIView, index: Int, currentObj:UIView) -> UIView?
 }
