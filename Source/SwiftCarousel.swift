@@ -356,7 +356,9 @@ open class SwiftCarousel: UIView {
         }
         
         didDeselectItem()
-        delegate?.didSelectItem?(item: choices[realSelectedIndex], index: selectedIndex, tapped: itemSelectedByTap)
+//        delegate?.didSelectItem?(item: choices[realSelectedIndex], index: selectedIndex, tapped: itemSelectedByTap)
+        delegate?.didSelectItem!(item:  choices[realSelectedIndex], index: selectedIndex, tapped: itemSelectedByTap, currentObj: self)
+
         itemSelectedByTap = false
         currentSelectedIndex = selectedIndex
         currentRealSelectedIndex = realSelectedIndex
@@ -373,7 +375,10 @@ open class SwiftCarousel: UIView {
             return
         }
         
-        delegate?.didDeselectItem?(item: choices[currentRealSelectedIndex], index: currentSelectedIndex)
+//        delegate?.didDeselectItem?(item: choices[currentRealSelectedIndex], index: currentSelectedIndex)
+        
+        delegate?.didDeselectItem!(item: choices[currentRealSelectedIndex], index: currentSelectedIndex, currentObj: self)
+
     }
     
     /**
